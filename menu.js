@@ -104,15 +104,36 @@ const foodArr = [
     popularty: 5,
     rateing: 2,
     tags:[`thin crust`,`kids`]
-},
-{Name: `the heat`,price: 18.00,category: `entree`,popularty: 2,rateing: 1, tags:[`spicy`,`chesse`,`thin crust`,`Mans`]
-},
-{ Name: `sweet`,price: 13.00,category: `appatizer`,popularty: 4,rateing: 1, tags:[`cheese`,`thick crust`,`kids`]
-},
-{Name: `stick`,price: 13.00,category: `appatizer`,popularty: 1,rateing: 1,tags:[`chesse`,`kids`]
-},
-{'Name': `suplex`,price: 27.00,category: `entree`,popularty: 6,rateing: 1,'tags':[`meat`,`chesse`,`thick crust`,`Mans`,`challenge`]
-}
+    },
+    {Name: `the heat`,
+    price: 18.00,
+    category: `entree`,
+    popularty: 2,
+    rateing: 1, 
+    tags:[`spicy`,`chesse`,`thin crust`,`Mans`]
+    },
+    { Name: `sweet`
+    ,price: 13.00,
+    category: `appatizer`
+    ,popularty: 4,
+    rateing: 1,
+    tags:[`cheese`,`thick crust`,`kids`]
+    },
+    {Name: `stick`,
+    price: 13.00,
+    category: `appatizer`,
+    popularty: 1,
+    rateing: 1,
+    tags:[`chesse`,`kids`]
+    },
+    {'Name': `suplex`,
+    price: 27.00,
+    category: `entree`,
+    popularty: 6,
+    rateing: 1,
+    'tags':[`meat`,`chesse`,`thick crust`,`Mans`,`challenge`]
+    }
+
 
 ]
 
@@ -129,17 +150,18 @@ const foodArr = [
     You can check for any tag that at least 1 of
     your food objects has.
 */
-const callTag = (foodArr) => {
-    console.log(foodArr.Name);
-    if(foodArr.tags ===`kids`){
-    return console.log(foodArr.Name);
-    }
-}
+// const callTag = (foodArr) => {
+//     console.log(foodArr.Name);
+//     if(foodArr.tags ===`kids`){
+//     return console.log(foodArr.Name);
+//     }
+// }
 
-const filteredFood = foodArr.filter(obj => obj.tags)
+const filteredFood = foodArr.filter(obj => {
+    return obj.tags.includes(`kids`)
+})
 
 console.log(filteredFood);
-console.log(callTag(foodArr));
 
 
 //////////////////PROBLEM 5////////////////////
@@ -181,8 +203,18 @@ console.log(callTag(foodArr));
     Return the filtered array from the entire function
 */
 
+const filterByProperty = (property, number,type) => {
+    const filterArr = FoodArr.filter(pizza => {
+        if(type === `Above`){
+            return pizza[property] > number
+        } else if (type === `below`){
+            return pizza[property] < number
+        } else {
+            return ` not a type`
+        }
 
-
+    })
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -191,4 +223,4 @@ console.log(callTag(foodArr));
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+console.log(filterByProperty(price,6,`above`));

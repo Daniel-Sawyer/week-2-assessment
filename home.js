@@ -121,7 +121,10 @@ const deals = [
     to be itself, but use the `replace` method
     to replace the 15 with a 10.
 */
-console.log(deals.title);
+deals[0].title = deals[0].title.replace(`15`,`10`)
+
+
+// console.log(deals);
 
 /*
     The restaurant is going to continue its
@@ -136,3 +139,5 @@ console.log(deals.title);
     to be displaying wrong on the live site.
 */
 
+deals[1].desc = deals[1].desc.replace(`March`,`April`).trim()
+console.log(deals);

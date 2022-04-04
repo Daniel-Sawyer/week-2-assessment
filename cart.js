@@ -33,11 +33,13 @@ const cart = [
     }
 ]
 
-const reduceCall = (total) => total.reduce() 
-
-const summedPrice = cart.reduce()
 
 
+const summedPrice = cart.reduce((acc,ord) => {
+    return acc + ord.price
+},0)
+
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +56,9 @@ const summedPrice = cart.reduce()
     decimals, for example: .06 for a 6% tax.
 */
 
-//CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal *(1 + tax)) - couponValue 
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +82,13 @@ const summedPrice = cart.reduce()
 */
 
 /*
-    TEXT ANSWER HERE
+   name: string
+   address: string
+   phone number : string
+   note : string
+   allergies array
+   credit card: boolean
+   regularCustmer: boolean
 
 */
 
@@ -88,4 +97,10 @@ const summedPrice = cart.reduce()
     guidelines.
 */
 
-//CODE HERE
+const customer = {
+    name: `Daniel`,
+    address: `place`,
+    phone: `10100101`,
+    allergies:[`gulten`],
+    creditCard: true
+}
